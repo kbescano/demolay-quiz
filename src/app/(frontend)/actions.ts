@@ -3,7 +3,7 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import { getPlayer, hasProfile, saveProfile } from '@/lib/auth'
+import { getPlayer, getSessionPlayerId, hasProfile, saveProfile } from '@/lib/auth'
 import { cleanText } from '@/lib/quiz-core'
 import { countAskableQuestions, startAttempt, submitAnswer, type QuizState } from '@/lib/quiz'
 import { SESSION_COOKIE } from '@/lib/session'
@@ -56,9 +56,10 @@ export async function startQuizAction(): Promise<void> {
 export async function answerAction(questionId: number, choice: number | null): Promise<QuizState> {
   if (!Number.isInteger(questionId)) return { phase: 'none' }
   if (choice !== null && !Number.isInteger(choice)) return { phase: 'none' }
-  const player = await getPlayer()
-  if (!player) return { phase: 'none' }
-  return submitAnswer(player, questionId, choice)
+  // The session cookie alone identifies the player, so there is no database read before saving.
+  const playerId = await getSessionPlayerId()
+  if (!playerId) return { phase: 'none' }
+  return submitAnswer(playerId, questionId, choice)
 }
 
 export async function signOutAction(): Promise<void> {

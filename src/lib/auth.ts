@@ -22,6 +22,11 @@ export const sessionCookieOptions = {
   maxAge: SESSION_MAX_AGE,
 }
 
+/** Just the player id from the session cookie: no database read. Enough to save an answer. */
+export async function getSessionPlayerId(): Promise<number | null> {
+  return readSession((await cookies()).get(SESSION_COOKIE)?.value, sessionSecret())
+}
+
 /** The signed-in player for this request, or null. */
 export const getPlayer = cache(async (): Promise<Player | null> => {
   const id = await readSession((await cookies()).get(SESSION_COOKIE)?.value, sessionSecret())
@@ -46,6 +51,7 @@ export async function upsertPlayer(profile: GoogleProfile): Promise<Player> {
     collection: 'players',
     where: { googleSub: { equals: profile.sub } },
     limit: 1,
+    pagination: false,
     depth: 0,
   })
   const existing = docs[0]

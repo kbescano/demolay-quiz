@@ -9,6 +9,8 @@ import type { Attempt, Player, Question } from '@/payload-types'
 import { hasProfile } from './auth'
 import {
   clampSeconds,
+  createTtlCache,
+  gradeAnswer,
   isExpired,
   isValidPermutation,
   optionOrder,
@@ -118,6 +120,25 @@ export const getSite = cache(async function getSite(): Promise<SiteView> {
   }
 })
 
+const secondsCache = createTtlCache<number>(30_000)
+
+/**
+ * Seconds per question. Every answer needs it and it almost never changes, so each server instance
+ * remembers it for 30 seconds instead of asking the database every time. A change made in the admin
+ * reaches the running quiz within that time.
+ */
+export function getSeconds(): Promise<number> {
+  return secondsCache.get(async () => {
+    const payload = await client()
+    const settings = await payload.findGlobal({
+      slug: 'site-settings',
+      depth: 0,
+      select: { secondsPerQuestion: true },
+    })
+    return clampSeconds(settings.secondsPerQuestion)
+  })
+}
+
 export async function countAskableQuestions(): Promise<number> {
   const payload = await client()
   const { docs } = await payload.find({
@@ -140,6 +161,7 @@ async function currentAttempt(payload: Payload, playerId: number): Promise<Attem
     where: { and: [{ player: { equals: playerId } }, { status: { equals: 'in-progress' } }] },
     sort: '-createdAt',
     limit: 1,
+    pagination: false,
     depth: 0,
   })
   return docs[0] ?? null
@@ -193,6 +215,7 @@ export async function startAttempt(player: Player): Promise<void> {
     where: { player: { equals: player.id } },
     sort: '-attemptNumber',
     limit: 1,
+    pagination: false,
     depth: 0,
   })
   const highestSaved = Math.max(0, ...(player.scores ?? []).map((row) => row.attemptNumber))
@@ -257,22 +280,14 @@ async function recordAnswer(
   const questionId = order[index]
   const answers = asAnswers(attempt.answers).filter((answer) => answer.questionId !== questionId)
 
+  const startedAt = Date.parse(attempt.questionStartedAt ?? '')
   let entry: StoredAnswer
   try {
     const question = await payload.findByID({ collection: 'questions', id: questionId, depth: 0 })
-    const options = question.options ?? []
-    const late = isExpired(Date.now(), Date.parse(attempt.questionStartedAt ?? ''), seconds)
-    const valid =
-      !late && choice !== null && Number.isInteger(choice) && choice >= 0 && choice < options.length
-    entry = {
-      questionId,
-      choice: valid ? choice : null,
-      correct: valid && Boolean(options[choice as number]?.isCorrect),
-      timedOut: !valid,
-    }
+    entry = gradeAnswer({ questionId, options: question.options ?? [], choice, startedAt, seconds, now: Date.now() })
   } catch {
     // The question was deleted while this attempt was running: leave it out of the score.
-    entry = { questionId, choice: null, correct: false, timedOut: false, skipped: true }
+    entry = gradeAnswer({ questionId, options: undefined, choice, startedAt, seconds, now: Date.now() })
   }
 
   const nextAnswers = [...answers, entry]
@@ -298,6 +313,20 @@ async function recordAnswer(
   const updated = await payload.update({ collection: 'attempts', id: attempt.id, data, depth: 0 })
   if (finished) await saveScore(payload, updated)
   return updated
+}
+
+/** What the browser sees of a question: text and options in this attempt's order. No correct answer. */
+function questionView(question: Question, optionOrders: unknown): QuestionView {
+  const options = question.options ?? []
+  const stored = asOrders(optionOrders)[String(question.id)]
+  const permutation = isValidPermutation(stored, options.length)
+    ? stored
+    : options.map((_, i) => i) // the admin changed the number of options mid-quiz
+  return {
+    id: question.id,
+    text: question.question,
+    options: permutation.map((optionIndex) => ({ index: optionIndex, text: options[optionIndex].text })),
+  }
 }
 
 async function toState(payload: Payload, attempt: Attempt, seconds: number): Promise<QuizState> {
@@ -326,23 +355,13 @@ async function toState(payload: Payload, attempt: Attempt, seconds: number): Pro
       continue
     }
 
-    const options = question.options ?? []
-    const stored = asOrders(current.optionOrders)[String(questionId)]
-    const permutation = isValidPermutation(stored, options.length)
-      ? stored
-      : options.map((_, i) => i) // the admin changed the number of options mid-quiz
-
     return {
       phase: 'question',
       index,
       total: order.length,
       remainingMs: remainingMs(now, startedAt, seconds),
       seconds,
-      question: {
-        id: question.id,
-        text: question.question,
-        options: permutation.map((optionIndex) => ({ index: optionIndex, text: options[optionIndex].text })),
-      },
+      question: questionView(question, current.optionOrders),
     }
   }
   return { phase: 'done' }
@@ -352,31 +371,91 @@ export async function getQuizState(player: Player): Promise<QuizState> {
   const payload = await client()
   const attempt = await currentAttempt(payload, player.id)
   if (!attempt) return { phase: 'none' }
-  const { seconds } = await getSite()
-  return toState(payload, attempt, seconds)
+  return toState(payload, attempt, await getSeconds())
 }
 
-export async function submitAnswer(player: Player, questionId: number, choice: number | null): Promise<QuizState> {
+/**
+ * Saves an answer and returns the next question.
+ *
+ * This runs once per question and every database query is a network round trip (Turso is remote),
+ * so the common case is kept to three: the attempt, this question together with the next, and one
+ * write. The last question and anything unusual (a question deleted mid-quiz) take the careful
+ * route through recordAnswer/toState.
+ */
+export async function submitAnswer(playerId: number, questionId: number, choice: number | null): Promise<QuizState> {
   const payload = await client()
-  const attempt = await currentAttempt(payload, player.id)
+  const attempt = await currentAttempt(payload, playerId)
 
   if (!attempt) {
     // A repeated click on the very last question arrives after the quiz already finished.
     const { docs } = await payload.find({
       collection: 'attempts',
-      where: { and: [{ player: { equals: player.id } }, { status: { equals: 'completed' } }] },
+      where: { and: [{ player: { equals: playerId } }, { status: { equals: 'completed' } }] },
       sort: '-completedAt',
       limit: 1,
+      pagination: false,
       depth: 0,
     })
     const justFinished = docs[0] && asAnswers(docs[0].answers).some((answer) => answer.questionId === questionId)
     return { phase: justFinished ? 'done' : 'none' }
   }
 
-  const { seconds } = await getSite()
+  const seconds = await getSeconds()
   const order = asNumberArray(attempt.order)
+  const index = attempt.currentIndex ?? 0
   // A repeated or stale submission (double click, second tab) must not skip a question.
-  if (order[attempt.currentIndex ?? 0] !== questionId) return toState(payload, attempt, seconds)
+  if (order[index] !== questionId) return toState(payload, attempt, seconds)
+
+  const nextId = order[index + 1]
+  if (nextId !== undefined) {
+    const { docs } = await payload.find({
+      collection: 'questions',
+      where: { id: { in: [questionId, nextId] } },
+      limit: 2,
+      pagination: false,
+      depth: 0,
+    })
+    const current = docs.find((question) => question.id === questionId)
+    const next = docs.find((question) => question.id === nextId)
+
+    if (current && next) {
+      const entry = gradeAnswer({
+        questionId,
+        options: current.options ?? [],
+        choice,
+        startedAt: Date.parse(attempt.questionStartedAt ?? ''),
+        seconds,
+        now: Date.now(),
+      })
+      const answers = [...asAnswers(attempt.answers).filter((answer) => answer.questionId !== questionId), entry]
+      const nextIndex = index + 1
+      const startedAt = new Date()
+      const { id, ...fields } = attempt
+
+      // One statement. payload.update would also re-read the document and check document locks.
+      await payload.db.updateOne({
+        collection: 'attempts',
+        id,
+        returning: false,
+        data: {
+          ...fields,
+          answers,
+          currentIndex: nextIndex,
+          questionStartedAt: startedAt.toISOString(),
+          updatedAt: startedAt.toISOString(),
+        },
+      })
+
+      return {
+        phase: 'question',
+        index: nextIndex,
+        total: order.length,
+        seconds,
+        remainingMs: remainingMs(Date.now(), startedAt.getTime(), seconds),
+        question: questionView(next, attempt.optionOrders),
+      }
+    }
+  }
 
   const updated = await recordAnswer(payload, attempt, choice, seconds)
   return toState(payload, updated, seconds)
@@ -398,6 +477,7 @@ export async function getResults(player: Player, attemptNumber?: number): Promis
     where: { and: filters },
     sort: '-attemptNumber',
     limit: 1,
+    pagination: false,
     depth: 0,
   })
   const attempt = docs[0]
