@@ -69,6 +69,7 @@ export default buildConfig({
     user: Users.slug,
     meta: {
       titleSuffix: '· DeMolay Quiz',
+      icons: [{ rel: 'icon', type: 'image/png', url: '/icon.png' }],
     },
     importMap: {
       baseDir: path.resolve(dirname),

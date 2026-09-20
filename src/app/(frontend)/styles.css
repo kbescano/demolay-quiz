@@ -1,12 +1,13 @@
-/* Minimalist but bold: black, off-white, one red. Heavy display type does the talking. */
+/* Minimalist but bold: the chapter logo palette, navy and white with a gold accent. */
 
 :root {
-  --bg: #0b0b0c;
-  --fg: #f5f2ea;
-  --muted: #9a9892;
-  --line: #2b2b2e;
-  --red: #e4202b;
-  --red-text: #ff6a72; /* readable red for small text on black */
+  --bg: #131873; /* logo navy */
+  --fg: #ffffff;
+  --muted: #b5bbf0;
+  --line: #3b42a6;
+  --red: #ef2b33; /* logo red: only for urgency and errors */
+  --red-text: #ff8a8f; /* readable red for text on navy */
+  --accent: #f7be16; /* logo gold */
   --display: var(--font-display), 'Impact', 'Arial Narrow Bold', sans-serif;
   --body: var(--font-body), system-ui, -apple-system, 'Segoe UI', sans-serif;
   --gutter: clamp(16px, 4vw, 40px);
@@ -44,8 +45,13 @@ a {
   color: inherit;
 }
 
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 :focus-visible {
-  outline: 3px solid var(--red-text);
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -99,13 +105,15 @@ a {
   height: clamp(56px, 9vw, 88px);
   max-width: 40vw;
   object-fit: contain;
+  /* Chapter seals are round; this also trims the white corners of a JPEG logo. */
+  border-radius: 50%;
 }
 
 .rule {
   height: 6px;
   width: 72px;
   margin: 28px 0;
-  background: var(--red);
+  background: var(--accent);
   border: 0;
 }
 
@@ -134,9 +142,9 @@ a {
 }
 
 .btn:hover:not(:disabled) {
-  background: var(--red);
-  border-color: var(--red);
-  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
 }
 
 .btn:disabled {
@@ -169,7 +177,7 @@ a {
 }
 
 .lede strong {
-  color: var(--red-text);
+  color: var(--accent);
   font-weight: 800;
 }
 
@@ -181,7 +189,7 @@ a {
   gap: 12px 24px;
   margin: 32px 0 0;
   padding: 16px 20px;
-  border: 2px solid var(--red);
+  border: 2px solid var(--accent);
   font-weight: 600;
 }
 
@@ -220,12 +228,12 @@ a {
 }
 
 .field input::placeholder {
-  color: #55544f;
+  color: #8990d8;
 }
 
 .field input:focus-visible {
   outline: none;
-  border-bottom-color: var(--red);
+  border-bottom-color: var(--accent);
 }
 
 .error {
@@ -251,7 +259,7 @@ a {
   gap: 20px;
   padding: 16px 0;
   border-bottom: 1px solid var(--line);
-  color: #d6d3cb;
+  color: #dfe3ff;
 }
 
 .rules li::before {
@@ -259,7 +267,7 @@ a {
   font-family: var(--display);
   font-size: 1.25rem;
   line-height: 1.4;
-  color: var(--red-text);
+  color: var(--accent);
 }
 
 /* ---------- Quiz ---------- */
@@ -369,7 +377,7 @@ a {
   display: inline-block;
   width: 3.2ch;
   margin: 0 0.15ch;
-  border-bottom: 0.09em solid var(--red-text);
+  border-bottom: 0.09em solid var(--accent);
   transform: translateY(0.02em);
 }
 
@@ -423,9 +431,9 @@ a {
 }
 
 .option[data-picked='true'] {
-  background: var(--red);
-  border-color: var(--red);
-  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
 }
 
 .option:disabled {
@@ -473,7 +481,7 @@ a {
 }
 
 .percent span {
-  color: var(--red-text);
+  color: var(--accent);
 }
 
 .who {
@@ -496,7 +504,7 @@ a {
 }
 
 .missed h2 span {
-  color: var(--red-text);
+  color: var(--accent);
 }
 
 .missed-list {
@@ -518,7 +526,7 @@ a {
   font-family: var(--display);
   font-size: 1.5rem;
   line-height: 1.2;
-  color: var(--red-text);
+  color: var(--accent);
 }
 
 .missed-q {
@@ -621,9 +629,9 @@ a {
 }
 
 .btn--google:hover:not(:disabled) {
-  background: var(--fg);
-  border-color: var(--fg);
-  color: #000;
+  background: #e4e7ff;
+  border-color: #e4e7ff;
+  color: #10145a;
 }
 
 .google-mark {
@@ -734,7 +742,7 @@ a {
 }
 
 .history a:hover .history-no {
-  color: var(--red-text);
+  color: var(--accent);
 }
 
 .history-no {
@@ -756,7 +764,7 @@ a {
   text-align: right;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--red-text);
+  color: var(--accent);
 }
 
 .history-date {

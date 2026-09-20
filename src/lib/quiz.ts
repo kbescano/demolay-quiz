@@ -2,6 +2,7 @@ import 'server-only'
 
 import config from '@payload-config'
 import { getPayload, type Payload } from 'payload'
+import { cache } from 'react'
 
 import type { Attempt, Player, Question } from '@/payload-types'
 
@@ -100,7 +101,8 @@ function isAskable(question: Pick<Question, 'options'>): boolean {
 
 /* ---------- Site settings ---------- */
 
-export async function getSite(): Promise<SiteView> {
+/** Title, subtitle, logo and timer from Quiz settings. Shared by everything rendered in one request. */
+export const getSite = cache(async function getSite(): Promise<SiteView> {
   const payload = await client()
   const settings = await payload.findGlobal({ slug: 'site-settings', depth: 1 })
   const logo = settings.logo && typeof settings.logo === 'object' ? settings.logo : null
@@ -114,7 +116,7 @@ export async function getSite(): Promise<SiteView> {
       ? { url: logo.url, alt: logo.alt || title, width: logo.width ?? 240, height: logo.height ?? 240 }
       : null,
   }
-}
+})
 
 export async function countAskableQuestions(): Promise<number> {
   const payload = await client()
