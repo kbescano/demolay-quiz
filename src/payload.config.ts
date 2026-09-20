@@ -12,6 +12,7 @@ import { Questions } from './collections/Questions'
 import { Attempts } from './collections/Attempts'
 import { Players } from './collections/Players'
 import { SiteSettings } from './globals/SiteSettings'
+import { resolveDatabaseUrl } from './lib/database-url'
 import { databaseStorage } from './lib/db-storage'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -34,10 +35,11 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  // Local development uses a plain file. In production, DATABASE_URI is a Turso (libSQL) address.
+  // Local development uses a plain file. In production, DATABASE_URI is a Turso (libSQL) address
+  // and the app refuses to start without it.
   db: sqliteAdapter({
     client: {
-      url: process.env.DATABASE_URI || 'file:./local.db',
+      url: resolveDatabaseUrl(process.env),
       authToken: process.env.DATABASE_AUTH_TOKEN || undefined,
     },
     // The schema only changes through migrations (npm run migrate:create, then npm run migrate).
