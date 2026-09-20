@@ -1,8 +1,8 @@
 /**
  * Loads seed/questions.json into the question bank.
  *
- *   npm run seed           local database (same one `npm run dev` uses)
- *   npm run seed:remote    your real Cloudflare D1 database (needs `wrangler login`)
+ *   npm run seed                                     the local database (local.db)
+ *   DATABASE_URI=libsql://... DATABASE_AUTH_TOKEN=... npm run seed     your live Turso database
  *
  * Questions that already exist (matched by exam number) are left alone so admin edits are
  * never overwritten. Set SEED_OVERWRITE=1 to reset them to the file's contents.

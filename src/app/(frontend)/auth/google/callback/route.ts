@@ -8,6 +8,7 @@ import {
   exchangeCode,
   googleConfig,
   googleKeys,
+  siteOrigin,
   verifyIdToken,
   type GoogleErrorCode,
 } from '@/lib/google'
@@ -18,8 +19,9 @@ const clearOAuthCookie = { path: '/auth/google', maxAge: 0 }
 /** Step 2: Google sends the player back here with a one-time code. */
 export async function GET(request: Request) {
   const url = new URL(request.url)
+  const origin = siteOrigin(request.url)
   const fail = (code: GoogleErrorCode) => {
-    const response = NextResponse.redirect(new URL(`/?error=${code}`, url))
+    const response = NextResponse.redirect(new URL(`/?error=${code}`, origin))
     response.cookies.set(OAUTH_COOKIE, '', clearOAuthCookie)
     return response
   }
@@ -53,7 +55,7 @@ export async function GET(request: Request) {
     })
     const player = await upsertPlayer(profile)
 
-    const response = NextResponse.redirect(new URL('/', url))
+    const response = NextResponse.redirect(new URL('/', origin))
     response.cookies.set(SESSION_COOKIE, await signSession(player.id, secret), sessionCookieOptions)
     response.cookies.set(OAUTH_COOKIE, '', clearOAuthCookie)
     return response

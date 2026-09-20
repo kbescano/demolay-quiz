@@ -49,8 +49,9 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 
-# OpenNext
-.open-next
+# Local database (SQLite) and old local state; never commit these
+/local.db
+/local.db-*
 .wrangler
 # Local tooling
 /.claude/

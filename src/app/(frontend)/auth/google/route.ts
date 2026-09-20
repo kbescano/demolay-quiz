@@ -1,15 +1,15 @@
 import { NextResponse } from 'next/server'
 
 import { sessionSecret } from '@/lib/auth'
-import { buildAuthUrl, callbackUrl, codeChallenge, googleConfig, randomToken } from '@/lib/google'
+import { buildAuthUrl, callbackUrl, codeChallenge, googleConfig, randomToken, siteOrigin } from '@/lib/google'
 import { OAUTH_COOKIE, OAUTH_MAX_AGE, signOAuthState } from '@/lib/session'
 
 /** Step 1: send the player to Google, remembering state, nonce and PKCE verifier in a signed cookie. */
 export async function GET(request: Request) {
   const config = googleConfig()
   const secret = sessionSecret()
-  if (!config) return NextResponse.redirect(new URL('/?error=not-configured', request.url))
-  if (!secret) return NextResponse.redirect(new URL('/?error=failed', request.url))
+  if (!config) return NextResponse.redirect(new URL('/?error=not-configured', siteOrigin(request.url)))
+  if (!secret) return NextResponse.redirect(new URL('/?error=failed', siteOrigin(request.url)))
 
   const state = randomToken()
   const nonce = randomToken()

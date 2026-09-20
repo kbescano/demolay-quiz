@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    'media-files': MediaFile;
     questions: Question;
     players: Player;
     attempts: Attempt;
@@ -81,6 +82,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    'media-files': MediaFilesSelect<false> | MediaFilesSelect<true>;
     questions: QuestionsSelect<false> | QuestionsSelect<true>;
     players: PlayersSelect<false> | PlayersSelect<true>;
     attempts: AttemptsSelect<false> | AttemptsSelect<true>;
@@ -173,6 +175,19 @@ export interface Media {
   filesize?: number | null;
   width?: number | null;
   height?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media-files".
+ */
+export interface MediaFile {
+  id: number;
+  path: string;
+  mimeType: string;
+  size: number;
+  data: string;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * Edit questions and answers any time. Tick exactly one option as correct. Only questions marked "Show in quiz" are asked.
@@ -324,6 +339,10 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
+        relationTo: 'media-files';
+        value: number | MediaFile;
+      } | null)
+    | ({
         relationTo: 'questions';
         value: number | Question;
       } | null)
@@ -416,6 +435,18 @@ export interface MediaSelect<T extends boolean = true> {
   filesize?: T;
   width?: T;
   height?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media-files_select".
+ */
+export interface MediaFilesSelect<T extends boolean = true> {
+  path?: T;
+  mimeType?: T;
+  size?: T;
+  data?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -1,0 +1,10 @@
+[build]
+  # Applies any pending database migrations to Turso, then builds the site.
+  command = "npm run build:netlify"
+  # Next.js output folder. Setting it here overrides the "Publish directory" field in the Netlify
+  # dashboard, which must not be "build" (that is what caused: "publish directory was not found").
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"

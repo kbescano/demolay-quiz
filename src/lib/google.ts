@@ -32,8 +32,18 @@ export function googleConfig(env: Record<string, string | undefined> = process.e
   return clientId && clientSecret ? { clientId, clientSecret } : null
 }
 
-export function callbackUrl(requestUrl: string): string {
-  return `${new URL(requestUrl).origin}/auth/google/callback`
+/**
+ * The site's public address. APP_URL (for example https://my-quiz.netlify.app) wins when set, because
+ * behind a hosting proxy a request's own URL can show an internal address, and Google only accepts
+ * the exact redirect address registered for the client.
+ */
+export function siteOrigin(requestUrl: string, env: Record<string, string | undefined> = process.env): string {
+  const configured = env.APP_URL?.trim().replace(/\/+$/, '')
+  return configured || new URL(requestUrl).origin
+}
+
+export function callbackUrl(requestUrl: string, env: Record<string, string | undefined> = process.env): string {
+  return `${siteOrigin(requestUrl, env)}/auth/google/callback`
 }
 
 /* ---------- PKCE and random values ---------- */

@@ -2,7 +2,10 @@ import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../access/authenticated'
 
-/** Uploaded images (the logo). Stored in Cloudflare R2. Readable by everyone so the logo can be shown. */
+/**
+ * Uploaded images (the logo). The file bytes live in the database (see lib/db-storage.ts).
+ * Readable by everyone so the logo can be shown to players.
+ */
 export const Media: CollectionConfig = {
   slug: 'media',
   access: {
@@ -22,7 +25,8 @@ export const Media: CollectionConfig = {
   upload: {
     // Raster only: an SVG served from this origin could carry scripts.
     mimeTypes: ['image/png', 'image/jpeg', 'image/webp', 'image/gif'],
-    // These are not supported on Workers yet due to lack of sharp
+    // Files go to the database through the storage adapter, never to the (read-only) server disk.
+    disableLocalStorage: true,
     crop: false,
     focalPoint: false,
   },

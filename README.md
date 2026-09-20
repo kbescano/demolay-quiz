@@ -1,23 +1,35 @@
 # DeMolay Petitioners' Quiz
 
-A minimalist, bold quiz app for DeMolay petitioners. Next.js + [Payload CMS](https://payloadcms.com), running on **Cloudflare Workers** with **D1** (database) and **R2** (logo storage).
+A minimalist, bold quiz app for DeMolay petitioners. Next.js + [Payload CMS](https://payloadcms.com), with Google sign-in. It runs entirely on free tiers: **Netlify** (hosting), **Turso** (database) and **Google** (sign-in).
 
-**Players** sign in with a Google account (required), enter their name and chapter **once**, then answer every question in random order, 15 seconds each. At the end they see their score and every question they missed, with the correct answer. They can retake the quiz as often as they like; every attempt is saved to their account, starting from attempt 1.
+**Players** sign in with a Google account (required), enter their name and chapter **once**, then answer every question in random order, 15 seconds each (the time is a setting). At the end they see their score and every question they missed, with the correct answer. They can retake the quiz as often as they like; every attempt is saved to their account, starting from attempt 1.
 
 **Admins** sign in at `/admin` to edit questions, answers, the logo and the timer, and to see every player and their scores. Nothing else is reachable: questions, answers, players and results are locked behind the admin login.
 
 ## What is in the box
 
-| Admin screen      | What it holds                                                                                   |
-| ----------------- | ----------------------------------------------------------------------------------------------- |
-| **Questions**     | The question bank. Edit text, options and which option is correct at any time.                  |
-| **Players**       | Everyone who signed in: name, chapter, email, and a **Scores** array (one row per attempt).     |
-| **Attempts**      | Every quiz run with its answers. Read-only.                                                     |
-| **Quiz settings** | Title, subtitle, **logo upload**, and seconds per question (default 15).                        |
-| **Media**         | Uploaded images (stored in R2).                                                                 |
-| **Users**         | Admin accounts.                                                                                 |
+| Admin screen      | What it holds                                                                               |
+| ----------------- | ------------------------------------------------------------------------------------------- |
+| **Questions**     | The question bank. Edit text, options and which option is correct at any time.              |
+| **Players**       | Everyone who signed in: name, chapter, email, and a **Scores** array (one row per attempt). |
+| **Attempts**      | Every quiz run with its answers. Read-only.                                                 |
+| **Quiz settings** | Title, subtitle, **logo upload**, and seconds per question.                                 |
+| **Media**         | Uploaded images. Files are stored inside the database, so no separate storage is needed.    |
+| **Users**         | Admin accounts.                                                                             |
 
-80 questions from the A. Mabini Chapter petitioners' exam are included in `seed/questions.json`, each tagged with where its answer came from (exam key, the Petitioner's Handbook, the web, or general knowledge). Anything tagged "General knowledge" deserves a quick review. Only these 80 exist in the app. To add more later, use **Questions → Create New** in the admin.
+80 questions from the A. Mabini Chapter petitioners' exam are included in `seed/questions.json`, each tagged with where its answer came from (exam key, the Petitioner's Handbook, the web, or general knowledge). Anything tagged "General knowledge" deserves a quick review. To add more later, use **Questions → Create New** in the admin.
+
+## Run it locally
+
+```bash
+npm install
+cp .env.example .env        # then set PAYLOAD_SECRET (openssl rand -hex 32) and the Google values
+npm run migrate             # creates the local database file, local.db
+npm run seed                # loads the 80 questions
+npm run dev                 # http://localhost:3000  (admin: /admin)
+```
+
+Locally the database is a plain file (`local.db`). Delete it and run `migrate` and `seed` again to start fresh. Locally, `/admin` lets you create the first admin freely.
 
 ## Set up Google sign-in
 
@@ -28,69 +40,69 @@ Players log in with Google. You create a free OAuth client once:
 3. **Audience:** choose **External**, then **Publish app** so anyone with a Google account can sign in. (In "Testing" only listed test users can.) The default scopes `openid`, `email`, `profile` need no Google review.
 4. **Clients → Create client → Web application.** Under **Authorized redirect URIs** add:
    - `http://localhost:3000/auth/google/callback` (local)
-   - `https://<your-worker-address>/auth/google/callback` (after you deploy; each address must match exactly)
-5. Copy the **Client ID** and **Client secret**.
+   - `https://<your-site>.netlify.app/auth/google/callback` (once you know your Netlify address)
+5. Copy the **Client ID** and **Client secret** into `.env` locally (`GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`).
 
-Locally, put them in `.env` as `GOOGLE_CLIENT_ID=...` and `GOOGLE_CLIENT_SECRET=...`.
+## Deploy for free (Netlify + Turso)
 
-## Run it locally
+Free-tier limits change, so check them before you rely on them. When this was set up: Netlify's free plan gives 300 credits a month with a hard cap (each production deploy costs about 15 credits, so deploy sparingly; if the credits run out the site pauses instead of charging you), and Turso's free plan gives 5 GB and 500 million row reads a month.
 
-```bash
-npm install
-cp .env.example .env        # then set PAYLOAD_SECRET (openssl rand -hex 32) and the Google values
-npm run payload -- migrate  # create the local database
-npm run seed                # load the 80 questions
-npm run dev                 # http://localhost:3000  (admin: /admin)
-```
+### 1. Create the database (Turso)
 
-Locally, `/admin` lets you create the first admin freely. Local data lives in `.wrangler/` and never touches Cloudflare.
-
-## Deploy to Cloudflare
-
-You need a Cloudflare account on the **Workers Paid plan** (about US$5 per month). The app bundles to about 4.5 MB compressed, over the 3 MB free-plan limit.
+Sign up at [turso.tech](https://turso.tech), then either use the dashboard or the CLI:
 
 ```bash
-npx wrangler login
-
-npx wrangler d1 create demolay-quiz          # copy the database_id it prints
-npx wrangler r2 bucket create demolay-quiz
+brew install tursodatabase/tap/turso
+turso auth login
+turso db create demolay-quiz
+turso db show demolay-quiz --url          # copy the libsql://... address
+turso db tokens create demolay-quiz       # copy the token
 ```
 
-1. Put the `database_id` into `wrangler.jsonc` (`d1_databases`).
-2. In `wrangler.jsonc`, under `vars`, set:
-   - `ADMIN_EMAILS` to your email (comma separated for more than one). **Required:** in production nobody can create an admin account unless their email is on this list.
-   - `GOOGLE_CLIENT_ID` to your Google client ID (it is not secret).
-3. Set the two secrets:
+### 2. Connect the repository (Netlify)
 
-   ```bash
-   openssl rand -hex 32 | npx wrangler secret put PAYLOAD_SECRET   # signs sessions; keep it private
-   npx wrangler secret put GOOGLE_CLIENT_SECRET                    # paste the Google client secret when asked
-   ```
+Import the GitHub repository in Netlify. The build settings come from `netlify.toml`, so leave them alone. In particular **Publish directory must not be `build`**. `netlify.toml` sets it to `.next`, which overrides the dashboard value.
 
-4. Migrate the database and deploy:
+### 3. Add environment variables
 
-   ```bash
-   npm run deploy
-   ```
+In **Site configuration → Environment variables**, add:
 
-5. Load the questions into the live database:
+| Variable               | Value                                                                                |
+| ---------------------- | ------------------------------------------------------------------------------------ |
+| `PAYLOAD_SECRET`       | A long random string: `openssl rand -hex 32`. Keep it private.                       |
+| `DATABASE_URI`         | The `libsql://...` address from Turso.                                               |
+| `DATABASE_AUTH_TOKEN`  | The Turso token.                                                                     |
+| `ADMIN_EMAILS`         | Your email (comma separated for more than one). **Required:** in production nobody can create an admin account unless their email is on this list. |
+| `GOOGLE_CLIENT_ID`     | From Google.                                                                         |
+| `GOOGLE_CLIENT_SECRET` | From Google. Mark it as a secret.                                                    |
+| `APP_URL`              | Your site's address, for example `https://your-site.netlify.app` (no trailing slash). |
 
-   ```bash
-   npm run seed:remote
-   ```
+### 4. Deploy
 
-6. Add your live address to the Google client's **Authorized redirect URIs**: `https://<your-worker>.workers.dev/auth/google/callback`.
-7. Open `https://<your-worker>.workers.dev/admin`, create your admin account (using the email from step 2), then go to **Quiz settings** to upload your logo.
+Push to GitHub. Netlify runs `npm run build:netlify`, which creates or updates the tables in Turso and then builds the site.
 
-To use your own domain, add it to the Worker under **Workers & Pages → demolay-quiz → Settings → Domains & Routes**, and add that address to the Google redirect URIs too.
+### 5. Load the questions
+
+From your computer, once, pointing at the live database (do not commit these values):
+
+```bash
+DATABASE_URI="libsql://..." DATABASE_AUTH_TOKEN="..." npm run seed
+```
+
+### 6. Finish
+
+1. Add `https://<your-site>.netlify.app/auth/google/callback` to the Google client's **Authorized redirect URIs**.
+2. Open `https://<your-site>.netlify.app/admin`, create your admin account (using an email from `ADMIN_EMAILS`), and open **Quiz settings** to upload your logo.
+
+To use your own domain, add it in Netlify's **Domain management**, update `APP_URL`, and add the new callback address in Google.
 
 ### After you change the data model
 
-If you edit the collections in `src/collections/`, create a new migration and deploy it:
+If you edit the collections in `src/collections/`, create a migration. The next deploy applies it automatically.
 
 ```bash
 npm run migrate:create -- describe_the_change
-npm run deploy
+npm run migrate          # apply it to your local database
 ```
 
 ## How it works
@@ -101,7 +113,9 @@ npm run deploy
 - **Random, complete quiz.** The server shuffles all active questions (and the option order, except where a question is marked "Keep option order") and stores that order. There is no skipping and no going back. An unfinished attempt is resumed, not restarted.
 - **The timer is enforced on the server.** The browser shows the countdown, but the server records when each question was served. Answers that arrive after the time (plus 1.5 s for network delay) count as "time is up". Reloading resumes the same question with the time that was left.
 - **Answers never reach the browser early.** The player only receives question text and options. Correctness is decided on the server, and correct answers are only sent on the results page.
+- **Always fresh.** Pages render on every request, so changes in the admin (title, logo, timer, questions) show up straight away. The browser tab title and description follow Quiz settings.
 - **Only questions ticked "Show in quiz" that have exactly one correct option are asked.** The admin form will not let you save an active question without a correct answer.
+- **The logo lives in the database.** Uploads are capped at 2 MB and limited to PNG, JPEG, WebP and GIF.
 
 ## Editing questions
 
@@ -112,11 +126,11 @@ Open **Questions** in the admin. Each question has its options as rows; tick **C
 | Command                          | Does                                                                                                                      |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | `npm run dev`                    | Local dev server                                                                                                          |
-| `npm test`                       | Unit tests (quiz rules, Google token checks, sessions, admin sign-up rule)                                                |
-| `npm run seed` / `seed:remote`   | Load `seed/questions.json` (local / live). Existing questions are never overwritten; use `SEED_OVERWRITE=1` to reset them |
-| `npm run deploy`                 | Migrate the live D1 database, then build and deploy the Worker                                                            |
-| `npm run preview`                | Build and run the Worker locally in the Workers runtime                                                                   |
-| `npm run migrate:create -- name` | Create a database migration after changing collections                                                                    |
+| `npm test`                       | Unit tests (quiz rules, Google token checks, sessions, admin sign-up rule, file storage)                                  |
+| `npm run migrate`                | Apply database migrations (local file, or Turso when `DATABASE_URI` is set)                                               |
+| `npm run migrate:create -- name` | Create a migration after changing collections                                                                             |
+| `npm run seed`                   | Load `seed/questions.json`. Existing questions are never overwritten; use `SEED_OVERWRITE=1` to reset them               |
+| `npm run build:netlify`          | What Netlify runs: migrate, then build                                                                                    |
 
 ## Notes
 
@@ -124,3 +138,4 @@ Open **Questions** in the admin. Each question has its options as rows; tick **C
 - The DeMolay emblem is a registered mark and is not bundled. Upload your own logo in **Quiz settings**.
 - Deleting an attempt in the admin does not remove that attempt's row from the player's Scores array; delete the player to remove everything.
 - Admin logins lock for 10 minutes after 5 failed attempts.
+- The site favicon files in `src/app/` were generated from the chapter logo. Replace `icon.png`, `apple-icon.png` and `favicon.ico` to change them.

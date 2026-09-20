@@ -9,6 +9,7 @@ import {
   exchangeCode,
   googleConfig,
   randomToken,
+  siteOrigin,
   verifyIdToken,
 } from '../src/lib/google'
 
@@ -142,9 +143,21 @@ describe('PKCE and auth URL', () => {
   })
 
   it('derives the callback URL from the request origin', () => {
-    expect(callbackUrl('https://quiz.example.workers.dev/auth/google?x=1')).toBe(
-      'https://quiz.example.workers.dev/auth/google/callback',
+    expect(callbackUrl('https://quiz.example.app/auth/google?x=1', {})).toBe(
+      'https://quiz.example.app/auth/google/callback',
     )
+  })
+
+  it('prefers APP_URL over the request when it is set (behind a proxy the request can show an internal address)', () => {
+    const env = { APP_URL: 'https://my-quiz.netlify.app/' }
+    expect(siteOrigin('http://localhost:8888/auth/google', env)).toBe('https://my-quiz.netlify.app')
+    expect(callbackUrl('http://localhost:8888/auth/google', env)).toBe(
+      'https://my-quiz.netlify.app/auth/google/callback',
+    )
+  })
+
+  it('ignores a blank APP_URL', () => {
+    expect(siteOrigin('https://quiz.example.app/x', { APP_URL: '  ' })).toBe('https://quiz.example.app')
   })
 })
 

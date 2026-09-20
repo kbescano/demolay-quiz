@@ -26,11 +26,9 @@ const eslintConfig = [
   {
     ignores: [
       '.next/',
-      '.open-next/',
       '.wrangler/',
       'src/migrations/',
       'src/payload-types.ts',
-      'cloudflare-env.d.ts',
       'src/app/(payload)/admin/importMap.js',
     ],
   },

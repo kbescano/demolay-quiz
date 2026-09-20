@@ -1,36 +1,30 @@
 {
   "name": "demolay-quiz",
   "version": "1.0.0",
-  "description": "DeMolay petitioners' quiz: Next.js + Payload CMS on Cloudflare Workers (D1 + R2)",
+  "description": "DeMolay petitioners' quiz: Next.js + Payload CMS, Google sign-in, free hosting on Netlify with Turso",
   "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build --webpack",
+    "build:netlify": "npm run migrate && npm run build",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
-    "devsafe": "rm -rf .next && rm -rf .open-next && cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
     "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint .",
     "test": "vitest run",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
-    "generate:types": "npm run generate:types:cloudflare && npm run generate:types:payload",
-    "generate:types:cloudflare": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
-    "generate:types:payload": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
     "migrate:create": "cross-env NODE_OPTIONS=--no-deprecation payload migrate:create",
-    "seed": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed.ts",
-    "seed:remote": "cross-env NODE_ENV=production NODE_OPTIONS=--no-deprecation payload run src/seed.ts",
-    "deploy": "npm run deploy:database && npm run deploy:app",
-    "deploy:app": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "deploy:database": "cross-env NODE_ENV=production PAYLOAD_SECRET=ignore payload migrate && wrangler d1 execute D1 --command \"PRAGMA optimize\" --remote",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview"
+    "seed": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed.ts"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "1.20.1",
-    "@payloadcms/db-d1-sqlite": "3.90.1",
+    "@payloadcms/db-sqlite": "3.90.1",
     "@payloadcms/next": "3.90.1",
+    "@payloadcms/plugin-cloud-storage": "3.90.1",
     "@payloadcms/richtext-lexical": "3.90.1",
-    "@payloadcms/storage-r2": "3.90.1",
     "@payloadcms/ui": "3.90.1",
     "cross-env": "^7.0.3",
     "dotenv": "16.4.7",
@@ -51,8 +45,7 @@
     "prettier": "^3.4.2",
     "tsx": "4.22.4",
     "typescript": "5.7.3",
-    "vitest": "4.0.18",
-    "wrangler": "~4.116.0"
+    "vitest": "4.0.18"
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0"
