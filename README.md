@@ -79,7 +79,7 @@ In **Site configuration → Environment variables**, add:
 
 ### 4. Deploy
 
-Push to GitHub. Netlify runs `npm run build:netlify`, which creates or updates the tables in Turso and then builds the site.
+Push to GitHub. Netlify runs `npm run build:netlify`, which creates or updates the tables in Turso and then builds the site. If Turso answers the migration with a brief error (a 502 while an idle database wakes up), the step retries up to 4 times before the deploy fails.
 
 ### 5. Load the questions
 
@@ -130,7 +130,7 @@ Open **Questions** in the admin. Each question has its options as rows; tick **C
 | `npm run migrate`                | Apply database migrations (local file, or Turso when `DATABASE_URI` is set)                                               |
 | `npm run migrate:create -- name` | Create a migration after changing collections                                                                             |
 | `npm run seed`                   | Load `seed/questions.json`. Existing questions are never overwritten; use `SEED_OVERWRITE=1` to reset them               |
-| `npm run build:netlify`          | What Netlify runs: migrate, then build                                                                                    |
+| `npm run build:netlify`          | What Netlify runs: migrate (with retries), then build                                                                     |
 
 ## Notes
 
