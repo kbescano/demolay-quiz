@@ -1,0 +1,2082 @@
+[
+  {
+    "number": 1,
+    "question": "Although the accepted date for the founding of the Order is March 18, 1919, DeMolay was actually founded on __________.",
+    "options": [
+      {
+        "text": "January 19, 1919",
+        "isCorrect": false
+      },
+      {
+        "text": "February 19, 1919",
+        "isCorrect": false
+      },
+      {
+        "text": "March 24, 1919",
+        "isCorrect": true
+      },
+      {
+        "text": "September 24, 1919",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook agrees: launched March 24, 1919 (first club meeting Feb 19, 1919)."
+  },
+  {
+    "number": 2,
+    "question": "Who was the first DeMolay to take the obligation?",
+    "options": [
+      {
+        "text": "Gorman McBride",
+        "isCorrect": false
+      },
+      {
+        "text": "Louis G. Lower",
+        "isCorrect": true
+      },
+      {
+        "text": "Ralph Sewell",
+        "isCorrect": false
+      },
+      {
+        "text": "Clyde Stream",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": ""
+  },
+  {
+    "number": 3,
+    "question": "The Founder of the Order of DeMolay was born on __________.",
+    "options": [
+      {
+        "text": "November 13, 1865",
+        "isCorrect": false
+      },
+      {
+        "text": "June 21, 1890",
+        "isCorrect": true
+      },
+      {
+        "text": "September 28, 1821",
+        "isCorrect": false
+      },
+      {
+        "text": "June 29, 1912",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook: Frank Sherman Land born June 21, 1890."
+  },
+  {
+    "number": 4,
+    "question": "At what age was Louis Lower introduced to the Founder of DeMolay?",
+    "options": [
+      {
+        "text": "13",
+        "isCorrect": false
+      },
+      {
+        "text": "15",
+        "isCorrect": false
+      },
+      {
+        "text": "17",
+        "isCorrect": true
+      },
+      {
+        "text": "19",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook 'The First DeMolay' section says seventeen; another section says sixteen. 16 is not an option."
+  },
+  {
+    "number": 5,
+    "question": "Who wrote the ageless Ritual of the Order of DeMolay?",
+    "options": [
+      {
+        "text": "Louis G. Lower",
+        "isCorrect": false
+      },
+      {
+        "text": "Frank A. Marshall",
+        "isCorrect": true
+      },
+      {
+        "text": "Frank S. Land",
+        "isCorrect": false
+      },
+      {
+        "text": "Alexander Cochran",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "Frank A. Marshall."
+  },
+  {
+    "number": 6,
+    "question": "Jacques DeMolay, the person for whom the Order was named, was the last known __________ of the Knights Templars.",
+    "options": [
+      {
+        "text": "Grand Master",
+        "isCorrect": true
+      },
+      {
+        "text": "Grand Preceptor",
+        "isCorrect": false
+      },
+      {
+        "text": "Grand Seneschal",
+        "isCorrect": false
+      },
+      {
+        "text": "Grand Turcupolier",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": ""
+  },
+  {
+    "number": 7,
+    "question": "The Knights Templars were given sanction by the Pope of the Roman Catholic Church in the year __________.",
+    "options": [
+      {
+        "text": "1028",
+        "isCorrect": false
+      },
+      {
+        "text": "1117",
+        "isCorrect": false
+      },
+      {
+        "text": "1128",
+        "isCorrect": true
+      },
+      {
+        "text": "1244",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook: sanctioned by the Church in 1128. Exam file had '11 17' (typo for 1117)."
+  },
+  {
+    "number": 8,
+    "question": "He was instrumental in the institution of the first DeMolay Chapter in the Philippines.",
+    "options": [
+      {
+        "text": "Bro. Artemio Bayas",
+        "isCorrect": false
+      },
+      {
+        "text": "MW Manuel Crudo",
+        "isCorrect": false
+      },
+      {
+        "text": "MW Michael Goldenberg",
+        "isCorrect": true
+      },
+      {
+        "text": "Hon. Macario R. Ramos, Sr.",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "Philippine DeMolay history: Dad Michael Goldenberg was Acting Deputy for the Philippines in 1946."
+  },
+  {
+    "number": 9,
+    "question": "The Chapter was instituted on __________.",
+    "options": [
+      {
+        "text": "March 13, 1984",
+        "isCorrect": false
+      },
+      {
+        "text": "April 22, 1984",
+        "isCorrect": true
+      },
+      {
+        "text": "October 7, 1984",
+        "isCorrect": false
+      },
+      {
+        "text": "December 29, 1984",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "handbook",
+    "adminNote": "A. Mabini Petitioner's Handbook: instituted April 22, 1984. (Charter granted Oct 7, 1984 is the distractor.)"
+  },
+  {
+    "number": 10,
+    "question": "Bro. __________ was installed as the first Master Councilor of the A. Mabini Chapter.",
+    "options": [
+      {
+        "text": "Ely Ernante B. Buendia",
+        "isCorrect": false
+      },
+      {
+        "text": "Ramon S. Herrera",
+        "isCorrect": true
+      },
+      {
+        "text": "Allan Benjamin V. Maneze",
+        "isCorrect": false
+      },
+      {
+        "text": "Miguel L. DeMesa, Jr.",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "Roll of Past Master Councilors: 1984-A Ramon S. Herrera."
+  },
+  {
+    "number": 11,
+    "question": "Where was the first DeMolay Chapter instituted?",
+    "options": [
+      {
+        "text": "Kansas City, Missouri",
+        "isCorrect": true
+      },
+      {
+        "text": "Arizona, Texas",
+        "isCorrect": false
+      },
+      {
+        "text": "Omaha, Nebraska",
+        "isCorrect": false
+      },
+      {
+        "text": "Baltimore, Maryland",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "web",
+    "adminNote": "The Mother Chapter, Kansas City, Missouri, was the first chapter."
+  },
+  {
+    "number": 13,
+    "question": "Frank S. Land became a Mason at the age of 22 when he joined __________.",
+    "options": [
+      {
+        "text": "Ivanhoe Lodge",
+        "isCorrect": true
+      },
+      {
+        "text": "Westport Chapter, R.A.M.",
+        "isCorrect": false
+      },
+      {
+        "text": "Ararat Shrine Temple",
+        "isCorrect": false
+      },
+      {
+        "text": "Temple Builders Club",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "Ivanhoe Lodge No. 446 (petition April 1912, raised July 23, 1912)."
+  },
+  {
+    "number": 15,
+    "question": "Frank A. Marshall worked as a journalist of __________.",
+    "options": [
+      {
+        "text": "Kansas City Chronicle",
+        "isCorrect": false
+      },
+      {
+        "text": "Kansas City Gazette",
+        "isCorrect": false
+      },
+      {
+        "text": "Kansas City Journal",
+        "isCorrect": true
+      },
+      {
+        "text": "Kansas City Times",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "Kansas City Journal (drama and music critic)."
+  },
+  {
+    "number": 16,
+    "question": "Jacques DeMolay was born in __________ in the Department of Haute Saone, France.",
+    "options": [
+      {
+        "text": "Burgundy",
+        "isCorrect": false
+      },
+      {
+        "text": "Champagne",
+        "isCorrect": false
+      },
+      {
+        "text": "Dijon",
+        "isCorrect": false
+      },
+      {
+        "text": "Vitrey",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook: born in Vitrey, Haute Saone, France, 1244."
+  },
+  {
+    "number": 17,
+    "question": "The Knights Templars were answerable only to whom?",
+    "options": [
+      {
+        "text": "their Grand Master",
+        "isCorrect": false
+      },
+      {
+        "text": "the prince or king in which their Preceptories are located",
+        "isCorrect": false
+      },
+      {
+        "text": "the Pope",
+        "isCorrect": true
+      },
+      {
+        "text": "to God",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": ""
+  },
+  {
+    "number": 18,
+    "question": "The first Chapter in the Philippines was instituted in __________.",
+    "options": [
+      {
+        "text": "1922",
+        "isCorrect": false
+      },
+      {
+        "text": "1929",
+        "isCorrect": false
+      },
+      {
+        "text": "1935",
+        "isCorrect": false
+      },
+      {
+        "text": "1946",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "exam-key",
+    "adminNote": "Jose Abad Santos Chapter No. 1, March 1946."
+  },
+  {
+    "number": 20,
+    "question": "Where was the first Installation of Officers of the Chapter held?",
+    "options": [
+      {
+        "text": "Grand Lodge of the Philippines",
+        "isCorrect": false
+      },
+      {
+        "text": "RECRAA Building",
+        "isCorrect": false
+      },
+      {
+        "text": "Scottish Rite Temple",
+        "isCorrect": false
+      },
+      {
+        "text": "Tropical Palace Hotel",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook: SSS Empress Hall, Tropical Palace Resort Hotel, April 22, 1984."
+  },
+  {
+    "number": 21,
+    "question": "Who was elected the first President of DeMolay?",
+    "options": [
+      {
+        "text": "Louis Lower",
+        "isCorrect": false
+      },
+      {
+        "text": "Gorman McBride",
+        "isCorrect": true
+      },
+      {
+        "text": "Lester Pennington",
+        "isCorrect": false
+      },
+      {
+        "text": "Clyde Stream",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "Gorman A. McBride, first Master Councilor of the Mother Chapter."
+  },
+  {
+    "number": 23,
+    "question": "Dad Frank S. Land was known as the __________ in his hometown.",
+    "options": [
+      {
+        "text": "Boy Preacher",
+        "isCorrect": true
+      },
+      {
+        "text": "Boy Mechanic",
+        "isCorrect": false
+      },
+      {
+        "text": "Boy Teacher",
+        "isCorrect": false
+      },
+      {
+        "text": "Boy Wonder",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "'The Boy Preacher'."
+  },
+  {
+    "number": 24,
+    "question": "At what age did Louis Lower die?",
+    "options": [
+      {
+        "text": "36",
+        "isCorrect": false
+      },
+      {
+        "text": "39",
+        "isCorrect": false
+      },
+      {
+        "text": "41",
+        "isCorrect": true
+      },
+      {
+        "text": "43",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "handbook",
+    "adminNote": "'He was forty-one years of age.'"
+  },
+  {
+    "number": 25,
+    "question": "Frank A. Marshall died on __________.",
+    "options": [
+      {
+        "text": "March 18, 1931",
+        "isCorrect": false
+      },
+      {
+        "text": "March 19, 1931",
+        "isCorrect": false
+      },
+      {
+        "text": "March 24, 1931",
+        "isCorrect": true
+      },
+      {
+        "text": "March 25, 1931",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "handbook",
+    "adminNote": "'He Died on March 24, 1931 at the age of 65.'"
+  },
+  {
+    "number": 26,
+    "question": "In __________, DeMolay was elected to the highest position in the hierarchy of the Knights Templars.",
+    "options": [
+      {
+        "text": "1291",
+        "isCorrect": false
+      },
+      {
+        "text": "1298",
+        "isCorrect": true
+      },
+      {
+        "text": "1307",
+        "isCorrect": false
+      },
+      {
+        "text": "1314",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook: named Grand Master in 1298."
+  },
+  {
+    "number": 28,
+    "question": "Who was named by Frank S. Land as the first Executive Officer for the Philippines, Guam and Okinawa?",
+    "options": [
+      {
+        "text": "Dad Artemio Bayas",
+        "isCorrect": false
+      },
+      {
+        "text": "MW Manuel Crudo",
+        "isCorrect": true
+      },
+      {
+        "text": "MW Camilo Osias",
+        "isCorrect": false
+      },
+      {
+        "text": "Dad Roberto Reyes",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "web",
+    "adminNote": "Grand Lodge of the Philippines bio: MW Manuel M. Crudo was 'for years the Executive Officer of the Council for the Philippines, Guam and Okinawa'. 'First' and 'named by Land' not explicitly confirmed."
+  },
+  {
+    "number": 29,
+    "question": "The BF Parañaque Masonic Club was formed in __________.",
+    "options": [
+      {
+        "text": "December 1979",
+        "isCorrect": true
+      },
+      {
+        "text": "July 1982",
+        "isCorrect": false
+      },
+      {
+        "text": "December 1983",
+        "isCorrect": false
+      },
+      {
+        "text": "October 1984",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "handbook",
+    "adminNote": "'Sometime December 1979, a group of masons...'"
+  },
+  {
+    "number": 30,
+    "question": "The Chapter elected its first set of Officers on __________.",
+    "options": [
+      {
+        "text": "February 19, 1984",
+        "isCorrect": false
+      },
+      {
+        "text": "March 18, 1984",
+        "isCorrect": false
+      },
+      {
+        "text": "March 25, 1984",
+        "isCorrect": false
+      },
+      {
+        "text": "April 1, 1984",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "handbook",
+    "adminNote": "'April 1, 1984 - Election of first set of Officers.'"
+  },
+  {
+    "number": 31,
+    "question": "Who was the first Grand Master of the International Supreme Council?",
+    "options": [
+      {
+        "text": "Alexander Cochran",
+        "isCorrect": true
+      },
+      {
+        "text": "John Glazier",
+        "isCorrect": false
+      },
+      {
+        "text": "Frank Land",
+        "isCorrect": false
+      },
+      {
+        "text": "William Osgood",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "DeMolay International past Grand Masters: #1 Alexander G. Cochran, 1921-1928."
+  },
+  {
+    "number": 32,
+    "question": "Before it changed its name on March 1, 1954, the International Supreme Council was known as the __________.",
+    "options": [
+      {
+        "text": "Grand Chapter of the Order of DeMolay",
+        "isCorrect": false
+      },
+      {
+        "text": "Grand Consistory of the Order of DeMolay",
+        "isCorrect": false
+      },
+      {
+        "text": "Grand Council of the Order of DeMolay",
+        "isCorrect": true
+      },
+      {
+        "text": "none of these",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "web",
+    "adminNote": "DeMolay training materials: in March 1954 the name Grand Council was changed to International Supreme Council."
+  },
+  {
+    "number": 33,
+    "question": "Of all the titles, honors, awards and distinctions given to him, which did Frank S. Land consider the most important?",
+    "options": [
+      {
+        "text": "Dad",
+        "isCorrect": true
+      },
+      {
+        "text": "Imperial Potentate",
+        "isCorrect": false
+      },
+      {
+        "text": "Sir",
+        "isCorrect": false
+      },
+      {
+        "text": "Worshipful Master",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": ""
+  },
+  {
+    "number": 34,
+    "question": "Louis Lower was shot in the chest by a(n) __________ .",
+    "options": [
+      {
+        "text": "drunken guard",
+        "isCorrect": true
+      },
+      {
+        "text": "escaped criminal",
+        "isCorrect": false
+      },
+      {
+        "text": "renegade soldier",
+        "isCorrect": false
+      },
+      {
+        "text": "wounded robber",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook: a drunken security guard."
+  },
+  {
+    "number": 36,
+    "question": "How long did Jacques DeMolay endure the rack and the dungeon?",
+    "options": [
+      {
+        "text": "7 weeks",
+        "isCorrect": false
+      },
+      {
+        "text": "7 months",
+        "isCorrect": false
+      },
+      {
+        "text": "7 years",
+        "isCorrect": true
+      },
+      {
+        "text": "7 decades",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook: 'For seven years...'"
+  },
+  {
+    "number": 37,
+    "question": "Who issued the secret writs for the arrest of the Knights Templars?",
+    "options": [
+      {
+        "text": "King Philip IV of France",
+        "isCorrect": true
+      },
+      {
+        "text": "King Philip V of France",
+        "isCorrect": false
+      },
+      {
+        "text": "Pope Clement V",
+        "isCorrect": false
+      },
+      {
+        "text": "Pope Celestine V",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "King Philip IV (the Fair) of France."
+  },
+  {
+    "number": 40,
+    "question": "The first group that comprised the Chapter’s Charter Members was given the Degrees on __________ by members of the Gen. Douglas MacArthur Chapter of Manila.",
+    "options": [
+      {
+        "text": "February 19, 1984",
+        "isCorrect": false
+      },
+      {
+        "text": "March 18, 1984",
+        "isCorrect": true
+      },
+      {
+        "text": "March 25, 1984",
+        "isCorrect": false
+      },
+      {
+        "text": "April 1, 1984",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "handbook",
+    "adminNote": "'March 18, 1984 - 7 young boys were conferred Initiatory Degree by the Gen. Douglas McArthur Chapter.'"
+  },
+  {
+    "number": 41,
+    "question": "The first non-American DeMolay Chapter was instituted in which of the following countries?",
+    "options": [
+      {
+        "text": "Brazil",
+        "isCorrect": false
+      },
+      {
+        "text": "Canada",
+        "isCorrect": true
+      },
+      {
+        "text": "Mexico",
+        "isCorrect": false
+      },
+      {
+        "text": "Puerto Rico",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "web",
+    "adminNote": "Winnipeg Chapter, Canada, February 24, 1923 (DeMolay Canada history)."
+  },
+  {
+    "number": 42,
+    "question": "The second Grand Master of the International Supreme Council was __________.",
+    "options": [
+      {
+        "text": "John Glazier",
+        "isCorrect": true
+      },
+      {
+        "text": "Louis Watres",
+        "isCorrect": false
+      },
+      {
+        "text": "Walter Ploeser",
+        "isCorrect": false
+      },
+      {
+        "text": "Charles McFee",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "web",
+    "adminNote": "DeMolay International past Grand Masters: #2 John H. Glazier, 1928-1931."
+  },
+  {
+    "number": 43,
+    "question": "Frank S. Land died on __________.",
+    "options": [
+      {
+        "text": "May 1, 1928",
+        "isCorrect": false
+      },
+      {
+        "text": "March 24, 1931",
+        "isCorrect": false
+      },
+      {
+        "text": "April 5, 1936",
+        "isCorrect": false
+      },
+      {
+        "text": "November 8, 1959",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "handbook",
+    "adminNote": "Frank S. Land died November 8, 1959."
+  },
+  {
+    "number": 44,
+    "question": "At the time of his death, Louis Lower was the Director of the __________ of Kansas City, Missouri.",
+    "options": [
+      {
+        "text": "Municipal Auditorium",
+        "isCorrect": true
+      },
+      {
+        "text": "Municipal Employment Bureau",
+        "isCorrect": false
+      },
+      {
+        "text": "Municipal Police Force",
+        "isCorrect": false
+      },
+      {
+        "text": "Municipal Fire Services",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "Director of the Municipal Auditorium, Kansas City."
+  },
+  {
+    "number": 45,
+    "question": "Frank A. Marshall was the editor of __________ from March 1921 up to his death.",
+    "options": [
+      {
+        "text": "The Cordon",
+        "isCorrect": true
+      },
+      {
+        "text": "The DeMolay Leader",
+        "isCorrect": false
+      },
+      {
+        "text": "The Gazette",
+        "isCorrect": false
+      },
+      {
+        "text": "The Templar",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "knowledge",
+    "adminNote": "The Cordon is DeMolay's official magazine. Marshall as its editor was not independently confirmed; the other options are not DeMolay publications."
+  },
+  {
+    "number": 46,
+    "question": "Jacques DeMolay was burned at the stake on an island in the __________ .",
+    "options": [
+      {
+        "text": "Danube River",
+        "isCorrect": false
+      },
+      {
+        "text": "River Rhine",
+        "isCorrect": false
+      },
+      {
+        "text": "River Rhone",
+        "isCorrect": false
+      },
+      {
+        "text": "River Seine",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "knowledge",
+    "adminNote": "Standard history: burned on the Ile aux Juifs in the Seine, Paris, March 18, 1314."
+  },
+  {
+    "number": 47,
+    "question": "The founder and first Grand Master of the Knights Templars was__________.",
+    "options": [
+      {
+        "text": "Hugh de Payen",
+        "isCorrect": true
+      },
+      {
+        "text": "Geoffrey de St. Omer",
+        "isCorrect": false
+      },
+      {
+        "text": "André de Montbard",
+        "isCorrect": false
+      },
+      {
+        "text": "Payen de Montdidier",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "knowledge",
+    "adminNote": "Hugues de Payens (Hugh de Payen), founder and first Grand Master of the Templars."
+  },
+  {
+    "number": 48,
+    "question": "What was the first Philippine DeMolay Chapter?",
+    "options": [
+      {
+        "text": "Gen. Emilio Aguinaldo Chapter",
+        "isCorrect": false
+      },
+      {
+        "text": "Jose Abad Santos Chapter",
+        "isCorrect": true
+      },
+      {
+        "text": "Loyalty Chapter",
+        "isCorrect": false
+      },
+      {
+        "text": "Mt. Apo Chapter",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "web",
+    "adminNote": "Jose Abad Santos Chapter (1946) was the first chapter in the Philippines and the Far East."
+  },
+  {
+    "number": 49,
+    "question": "Who was the fourth Master Councilor of the Chapter?",
+    "options": [
+      {
+        "text": "Miguel L. De Mesa, Jr.",
+        "isCorrect": false
+      },
+      {
+        "text": "Caesar G. Guerrero",
+        "isCorrect": false
+      },
+      {
+        "text": "Antonio S. Herrera",
+        "isCorrect": false
+      },
+      {
+        "text": "Allan Benjamin V. Maneze",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "Roll of Past Master Councilors: 1985-B Allan Benjamin V. Maneze is fourth."
+  },
+  {
+    "number": 53,
+    "question": "Who presides over the Philippine DeMolay Congress?",
+    "options": [
+      {
+        "text": "National Master Councilor",
+        "isCorrect": true
+      },
+      {
+        "text": "National Congress Secretary",
+        "isCorrect": false
+      },
+      {
+        "text": "Jurisdictional Master Councilor",
+        "isCorrect": false
+      },
+      {
+        "text": "Regional Master Councilor",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "knowledge",
+    "adminNote": "The National Master Councilor heads the National DeMolay Congress (handbook lists NMC, NSC, NJC, Treasurer, Congress Secretary)."
+  },
+  {
+    "number": 55,
+    "question": "The __________ is the only official position in the Chapter that may be filled by an Active DeMolay, a Senior DeMolay, or a Master Mason.",
+    "options": [
+      {
+        "text": "Master Councilor",
+        "isCorrect": false
+      },
+      {
+        "text": "Scribe",
+        "isCorrect": true
+      },
+      {
+        "text": "Treasurer",
+        "isCorrect": false
+      },
+      {
+        "text": "Sentinel",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "knowledge",
+    "adminNote": "Handbook: the Scribe 'can be an active or senior DeMolay' and is appointed by the Advisory Council. 'Or a Master Mason' not confirmed in the handbook."
+  },
+  {
+    "number": 56,
+    "question": "Which of the following appendant groups of the Order is composed of DeMolays and Master Masons who have been elevated to the rank, dignity and honor of a Legionnaire of the Order?",
+    "options": [
+      {
+        "text": "Court",
+        "isCorrect": false
+      },
+      {
+        "text": "Preceptory",
+        "isCorrect": true
+      },
+      {
+        "text": "Priory",
+        "isCorrect": false
+      },
+      {
+        "text": "none of these",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "web",
+    "adminNote": "Legion of Honor members are organised in Preceptories led by a Dean."
+  },
+  {
+    "number": 57,
+    "question": "The __________ symbolizes the purity of a member’s intentions to always remember the motto of the Order.",
+    "options": [
+      {
+        "text": "Crescent",
+        "isCorrect": false
+      },
+      {
+        "text": "Crown",
+        "isCorrect": false
+      },
+      {
+        "text": "five-armed white cross",
+        "isCorrect": true
+      },
+      {
+        "text": "ten precious jewels",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "'The Five-armed WHITE CROSS symbolizes the purity of your intentions to always remember the motto of the Order.' The exam file lettered these options a, b, d, e; they were relabelled a-d."
+  },
+  {
+    "number": 58,
+    "question": "According to its Founder, DeMolay is like a religion because __________.",
+    "options": [
+      {
+        "text": "it is hard to define and must be experienced by the members for it to be fully understood",
+        "isCorrect": true
+      },
+      {
+        "text": "it offers a means of salvation for each of its members through its rituals",
+        "isCorrect": false
+      },
+      {
+        "text": "it has a hierarchy of sorts that is similar in nature and function to that of a church",
+        "isCorrect": false
+      },
+      {
+        "text": "it is both mystical and supernatural, and demands the complete surrender of its members",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "knowledge",
+    "adminNote": "Options b-d contradict DeMolay teaching (it is not a religion and offers no salvation). Land's comparison, that it is hard to define and must be experienced, was not found verbatim."
+  },
+  {
+    "number": 59,
+    "question": "In which series below are the cardinal virtues of the Order arranged in their proper sequence?",
+    "options": [
+      {
+        "text": "fidelity, patriotism, cleanness",
+        "isCorrect": false
+      },
+      {
+        "text": "reverence for sacred things, filial love, comradeship",
+        "isCorrect": false
+      },
+      {
+        "text": "courtesy, comradeship, fidelity",
+        "isCorrect": true
+      },
+      {
+        "text": "cleanness, fidelity, courtesy",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "Order of the virtues: Filial Love, Reverence for Sacred Things, Courtesy, Comradeship, Fidelity, Cleanness, Patriotism."
+  },
+  {
+    "number": 60,
+    "question": "“A DeMolay is courteous.” This courtesy is intended for __________.",
+    "options": [
+      {
+        "text": "parents",
+        "isCorrect": false
+      },
+      {
+        "text": "members",
+        "isCorrect": false
+      },
+      {
+        "text": "strangers",
+        "isCorrect": false
+      },
+      {
+        "text": "all",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "web",
+    "adminNote": "Ceremony of Light: courtesy 'transcends friendships, reaches to the stranger, to the aged, to all men.' Option c (strangers) is partly true; d is the widest."
+  },
+  {
+    "number": 61,
+    "question": "The __________ is the representative of the Supreme Council in the region to which he is assigned.",
+    "options": [
+      {
+        "text": "Deputy Grand Master",
+        "isCorrect": false
+      },
+      {
+        "text": "Jurisdictional Grand Master",
+        "isCorrect": false
+      },
+      {
+        "text": "Executive Officer",
+        "isCorrect": true
+      },
+      {
+        "text": "Chapter Advisor",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "web",
+    "adminNote": "The Executive Officer is the adult leader who represents the Supreme Council in a jurisdiction (handbook: 'Executive Officer of the Jurisdiction')."
+  },
+  {
+    "number": 62,
+    "question": "The __________ governs the workings of the Supreme Council of the Order of DeMolay, Republic of the Philippines.",
+    "options": [
+      {
+        "text": "Constitution",
+        "isCorrect": false
+      },
+      {
+        "text": "Sacred Landmarks",
+        "isCorrect": false
+      },
+      {
+        "text": "Statutes",
+        "isCorrect": true
+      },
+      {
+        "text": "none of these",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "knowledge",
+    "adminNote": "The Philippine Provisional Supreme Council adopted its Statutes (1983). Not found verbatim."
+  },
+  {
+    "number": 63,
+    "question": "How many Jurisdictional Master Councilors are there at a given time?",
+    "options": [
+      {
+        "text": "1",
+        "isCorrect": false
+      },
+      {
+        "text": "2",
+        "isCorrect": false
+      },
+      {
+        "text": "3",
+        "isCorrect": true
+      },
+      {
+        "text": "4",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "handbook",
+    "adminNote": "Jurisdictional Master Councilors for Luzon, Visayas and Mindanao."
+  },
+  {
+    "number": 65,
+    "question": "One of his clearly defined tasks is to ensure that new members are properly coached and trained as they enter the Order.",
+    "options": [
+      {
+        "text": "Master Councilor",
+        "isCorrect": false
+      },
+      {
+        "text": "Senior Councilor",
+        "isCorrect": false
+      },
+      {
+        "text": "Junior Councilor",
+        "isCorrect": true
+      },
+      {
+        "text": "Chapter Advisor",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook: the Junior Councilor handles recruitment, orientation and coaching of new initiates."
+  },
+  {
+    "number": 66,
+    "question": "The full name of the Order of Knighthood is __________.",
+    "options": [
+      {
+        "text": "The Chivalric Order of the Knights of Jacques DeMolay",
+        "isCorrect": false
+      },
+      {
+        "text": "The Chivalric Order of the Fellow Soldiers of Jacques DeMolay",
+        "isCorrect": false
+      },
+      {
+        "text": "The Holy Order of the Fellow Knights of Jacques DeMolay",
+        "isCorrect": false
+      },
+      {
+        "text": "The Chivalric Knights of the Holy Order of the Fellow Soldiers of Jacques DeMolay",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "'The Chivalric Knights of the Holy Order of the Fellow Soldiers of Jacques DeMolay.'"
+  },
+  {
+    "number": 67,
+    "question": "They denote justice, fortitude and mercy in the official DeMolay emblem.",
+    "options": [
+      {
+        "text": "five-armed white cross",
+        "isCorrect": false
+      },
+      {
+        "text": "ten stars",
+        "isCorrect": false
+      },
+      {
+        "text": "crossed swords",
+        "isCorrect": true
+      },
+      {
+        "text": "ten precious stones",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook: crossed swords denote justice, fortitude and mercy."
+  },
+  {
+    "number": 68,
+    "question": "The Order of DeMolay aims to __________ the home, church and school.",
+    "options": [
+      {
+        "text": "compete with",
+        "isCorrect": false
+      },
+      {
+        "text": "control",
+        "isCorrect": false
+      },
+      {
+        "text": "discredit",
+        "isCorrect": false
+      },
+      {
+        "text": "supplement",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "'...but rather to supplement them...'"
+  },
+  {
+    "number": 69,
+    "question": "This virtue teaches a DeMolay that true heroism may be practiced in peace as well as in war.",
+    "options": [
+      {
+        "text": "Cleanness",
+        "isCorrect": false
+      },
+      {
+        "text": "Fidelity",
+        "isCorrect": false
+      },
+      {
+        "text": "Patriotism",
+        "isCorrect": true
+      },
+      {
+        "text": "Reverence for Sacred Things",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "Ethic: 'A DeMolay is patriot in peace as well as at war.'"
+  },
+  {
+    "number": 70,
+    "question": "“A DeMolay, by __________ and __________, must preserve the high standards to which he has pledged himself.”",
+    "options": [
+      {
+        "text": "demonstration and display",
+        "isCorrect": false
+      },
+      {
+        "text": "word and deed",
+        "isCorrect": false
+      },
+      {
+        "text": "precept and example",
+        "isCorrect": true
+      },
+      {
+        "text": "teaching and illustration",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "'A DeMolay by precept and example must preserve the high standards...'"
+  },
+  {
+    "number": 71,
+    "question": "Who is charged with the supervision of the day-to-day operations of the Supreme Council offices?",
+    "options": [
+      {
+        "text": "Grand Secretary",
+        "isCorrect": true
+      },
+      {
+        "text": "Grand Treasurer",
+        "isCorrect": false
+      },
+      {
+        "text": "Office Manager",
+        "isCorrect": false
+      },
+      {
+        "text": "Building Administrator",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "web",
+    "adminNote": "DeMolay International: the Grand Secretary controls the general offices. Philippine Statutes not checked."
+  },
+  {
+    "number": 72,
+    "question": "Which is not a function of the Supreme Council?",
+    "options": [
+      {
+        "text": "as a central office of record",
+        "isCorrect": false
+      },
+      {
+        "text": "as an agency for recruitment",
+        "isCorrect": true
+      },
+      {
+        "text": "as an agency for service",
+        "isCorrect": false
+      },
+      {
+        "text": "as a source for unification",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "SCOD serves as a central office of record, an agency for service, an agency for PROMOTION and a source of unification."
+  },
+  {
+    "number": 74,
+    "question": "He ensures that the Chapter has an aggressive and effective mechanism for the recruitment, training and coaching of new members.",
+    "options": [
+      {
+        "text": "Athletics Advisor",
+        "isCorrect": false
+      },
+      {
+        "text": "Civic Service Advisor",
+        "isCorrect": false
+      },
+      {
+        "text": "Membership Advisor",
+        "isCorrect": true
+      },
+      {
+        "text": "Ritual Advisor",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "knowledge",
+    "adminNote": "The Membership Advisor's role, by name and function."
+  },
+  {
+    "number": 75,
+    "question": "He guards the outer door of the Chapter and prevents the entrance of non-members into the Chapter room when the Chapter is in session.",
+    "options": [
+      {
+        "text": "Junior Deacon",
+        "isCorrect": false
+      },
+      {
+        "text": "Sentinel",
+        "isCorrect": true
+      },
+      {
+        "text": "Marshal",
+        "isCorrect": false
+      },
+      {
+        "text": "Senior Steward",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "knowledge",
+    "adminNote": "The Sentinel guards the outer door of the Chapter room."
+  },
+  {
+    "number": 76,
+    "question": "The equivalent of the Master Councilor in the Order of Knighthood is known as the __________.",
+    "options": [
+      {
+        "text": "Most Eminent Commander",
+        "isCorrect": false
+      },
+      {
+        "text": "Most Venerable Master",
+        "isCorrect": false
+      },
+      {
+        "text": "Illustrious Knight Commander",
+        "isCorrect": true
+      },
+      {
+        "text": "Thrice Puissant Commander",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "A Knighthood unit is a Priory led by an Illustrious Knight Commander (handbook: 'Past Illustrious Knight Commander')."
+  },
+  {
+    "number": 77,
+    "question": "What do the ten precious jewels in the DeMolay emblem signify?",
+    "options": [
+      {
+        "text": "the seven cardinal virtues and the three Councilors of the Chapter",
+        "isCorrect": false
+      },
+      {
+        "text": "the ten plagues unleashed by Moses on the Egyptians",
+        "isCorrect": false
+      },
+      {
+        "text": "the Founder and the nine original members of the Order",
+        "isCorrect": true
+      },
+      {
+        "text": "the nine founding knights of the Templars and Jacques DeMolay",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "'The ten precious stones honor our founder, Frank S. Land and the nine youths...'"
+  },
+  {
+    "number": 78,
+    "question": "DeMolay accomplishes its goal of building better citizens by offering the teenage young man of today all of the following, except __________.",
+    "options": [
+      {
+        "text": "a wholesome occupation for their spare time",
+        "isCorrect": false
+      },
+      {
+        "text": "worthwhile associates",
+        "isCorrect": false
+      },
+      {
+        "text": "the best of environment",
+        "isCorrect": false
+      },
+      {
+        "text": "military training",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "The four offerings are: wholesome spare-time occupation, worthwhile associates, best of environment, a complete youth program."
+  },
+  {
+    "number": 79,
+    "question": "The sages named this love agape, or love for no other reason than the sake of being.",
+    "options": [
+      {
+        "text": "filial love",
+        "isCorrect": true
+      },
+      {
+        "text": "patriotic love",
+        "isCorrect": false
+      },
+      {
+        "text": "divine love",
+        "isCorrect": false
+      },
+      {
+        "text": "brotherly love",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "web",
+    "adminNote": "Official Ceremony of Light, first candle: 'the love between parent and child... The sages named this love agape.' That candle is filial love."
+  },
+  {
+    "number": 80,
+    "question": "“A DeMolay’s __________ is as good as his bond.”",
+    "options": [
+      {
+        "text": "guarantee",
+        "isCorrect": false
+      },
+      {
+        "text": "oath",
+        "isCorrect": false
+      },
+      {
+        "text": "promise",
+        "isCorrect": false
+      },
+      {
+        "text": "word",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "'A DeMolay's word is as good as his bond.'"
+  },
+  {
+    "number": 82,
+    "question": "These are issuances by the Grand Master of the Supreme Council and have the power of law.",
+    "options": [
+      {
+        "text": "Circulars",
+        "isCorrect": false
+      },
+      {
+        "text": "Directives",
+        "isCorrect": false
+      },
+      {
+        "text": "Edicts",
+        "isCorrect": true
+      },
+      {
+        "text": "Instructions",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "knowledge",
+    "adminNote": "Edicts of the Grand Master carry the force of law in Masonic-style statutes. Philippine Statutes not found."
+  },
+  {
+    "number": 85,
+    "question": "This position in the Chapter is second only in importance to that of the Chapter Advisor.",
+    "options": [
+      {
+        "text": "Master Councilor",
+        "isCorrect": false
+      },
+      {
+        "text": "Scribe",
+        "isCorrect": true
+      },
+      {
+        "text": "Treasurer",
+        "isCorrect": false
+      },
+      {
+        "text": "none of these",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "handbook",
+    "adminNote": "Scribe: 'second only in importance to the post of the chapter advisor.'"
+  },
+  {
+    "number": 86,
+    "question": "In the emblem of the Order of Knighthood, which part denotes steadfastness?",
+    "options": [
+      {
+        "text": "branch of laurel",
+        "isCorrect": false
+      },
+      {
+        "text": "ring of precious stones",
+        "isCorrect": false
+      },
+      {
+        "text": "picture of Jacques DeMolay",
+        "isCorrect": false
+      },
+      {
+        "text": "none of these",
+        "isCorrect": true
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "web",
+    "adminNote": "Knighthood emblem: the branch of OAK leaves denotes steadfastness and devotion to service; laurel denotes honor and victory. So 'none of these' is correct."
+  },
+  {
+    "number": 87,
+    "question": "Which part of the DeMolay emblem is emblematic of chivalry?",
+    "options": [
+      {
+        "text": "crescent",
+        "isCorrect": false
+      },
+      {
+        "text": "helmet",
+        "isCorrect": true
+      },
+      {
+        "text": "pearls",
+        "isCorrect": false
+      },
+      {
+        "text": "rubies",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "'The HELMET is emblematic of chivalry.'"
+  },
+  {
+    "number": 89,
+    "question": "Which virtue speaks of loyalty to one’s friends and ideals?",
+    "options": [
+      {
+        "text": "Comradeship",
+        "isCorrect": false
+      },
+      {
+        "text": "Fidelity",
+        "isCorrect": true
+      },
+      {
+        "text": "Patriotism",
+        "isCorrect": false
+      },
+      {
+        "text": "Reverence for Sacred Things",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "Ethic: 'A DeMolay is loyal to ideals and friends.' (fidelity)"
+  },
+  {
+    "number": 90,
+    "question": "The eighth ethic of a DeMolay is a restatement of which cardinal virtue?",
+    "options": [
+      {
+        "text": "Filial Love",
+        "isCorrect": false
+      },
+      {
+        "text": "Reverence for Sacred Things",
+        "isCorrect": false
+      },
+      {
+        "text": "Courtesy",
+        "isCorrect": true
+      },
+      {
+        "text": "Comradeship",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "handbook",
+    "adminNote": "The 8th of the 14 ethics is 'A DeMolay is courteous.' Exam file typos: 'eight' (eighth), 'Scared' (Sacred)."
+  },
+  {
+    "number": 92,
+    "question": "By granting a subordinate Chapter a __________, the Supreme Council grants recognition to that Chapter, the authority to confer the Degrees of the Order and the permission to use the name “DeMolay.”",
+    "options": [
+      {
+        "text": "Charter",
+        "isCorrect": true
+      },
+      {
+        "text": "Dispensation",
+        "isCorrect": false
+      },
+      {
+        "text": "Letters Temporary",
+        "isCorrect": false
+      },
+      {
+        "text": "none of these",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "knowledge",
+    "adminNote": "A Charter is the permanent grant. Letters Temporary/Dispensation are temporary (handbook: Letters Temporary Dec 1983, Charter Oct 7, 1984)."
+  },
+  {
+    "number": 94,
+    "question": "He is responsible for giving recognition to deserving Active and Senior members of the Chapter for outstanding services to the Chapter and the Order.",
+    "options": [
+      {
+        "text": "Awards Advisor",
+        "isCorrect": true
+      },
+      {
+        "text": "Civic Service Advisor",
+        "isCorrect": false
+      },
+      {
+        "text": "Masonic Service Advisor",
+        "isCorrect": false
+      },
+      {
+        "text": "Socials Advisor",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": ""
+  },
+  {
+    "number": 95,
+    "question": "He is the second-in-command of the Chapter and in most cases, heads the alternate official line of the Chapter.",
+    "options": [
+      {
+        "text": "Senior Councilor",
+        "isCorrect": true
+      },
+      {
+        "text": "Junior Councilor",
+        "isCorrect": false
+      },
+      {
+        "text": "Past Master Councilor",
+        "isCorrect": false
+      },
+      {
+        "text": "none of these",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "exam-key",
+    "adminNote": "Handbook: the SC is the second in command."
+  },
+  {
+    "number": 96,
+    "question": "The Master Councilor is to a Chapter as the __________ is to a Preceptory.",
+    "options": [
+      {
+        "text": "Dean",
+        "isCorrect": true
+      },
+      {
+        "text": "Commander in the East",
+        "isCorrect": false
+      },
+      {
+        "text": "Sacristan",
+        "isCorrect": false
+      },
+      {
+        "text": "President",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "Legion of Honor Preceptories are led by a Dean."
+  },
+  {
+    "number": 97,
+    "question": "The last pearl in the DeMolay emblem honors __________.",
+    "options": [
+      {
+        "text": "Elmer Dorsey",
+        "isCorrect": false
+      },
+      {
+        "text": "Jerome Jacobson",
+        "isCorrect": true
+      },
+      {
+        "text": "Edmund Marshall",
+        "isCorrect": false
+      },
+      {
+        "text": "William Steinhilber",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": ""
+  },
+  {
+    "number": 98,
+    "question": "“No DeMolay shall fail as a __________, as __________, and as a __________.”",
+    "options": [
+      {
+        "text": "man, leader, citizen",
+        "isCorrect": false
+      },
+      {
+        "text": "citizen, leader, man",
+        "isCorrect": true
+      },
+      {
+        "text": "leader, man, citizen",
+        "isCorrect": false
+      },
+      {
+        "text": "none of these",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": true,
+    "answerSource": "exam-key",
+    "adminNote": "'No DeMolay shall fail as a citizen, as a leader and as a man.'"
+  },
+  {
+    "number": 99,
+    "question": "This virtue emphasizes the point that there is nothing effeminate in a young man who shows his love and appreciation for his parents.",
+    "options": [
+      {
+        "text": "Filial Love",
+        "isCorrect": true
+      },
+      {
+        "text": "Reverence for Sacred Things",
+        "isCorrect": false
+      },
+      {
+        "text": "Courtesy",
+        "isCorrect": false
+      },
+      {
+        "text": "Comradeship",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": ""
+  },
+  {
+    "number": 100,
+    "question": "“A DeMolay is clean in __________ and __________.”",
+    "options": [
+      {
+        "text": "mind, body",
+        "isCorrect": true
+      },
+      {
+        "text": "thought, deed",
+        "isCorrect": false
+      },
+      {
+        "text": "word, action",
+        "isCorrect": false
+      },
+      {
+        "text": "body and spirit",
+        "isCorrect": false
+      }
+    ],
+    "active": true,
+    "keepOptionOrder": false,
+    "answerSource": "exam-key",
+    "adminNote": "'A DeMolay is clean in mind and body.'"
+  }
+]
